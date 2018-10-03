@@ -1,4 +1,4 @@
-def call(script) {
+def call() {
   //def causes = currentBuild.rawBuild.getCauses()
 
   //for (cause in causes) {
@@ -8,7 +8,7 @@ def call(script) {
   //}
 
   try {
-    script.sh 'php --version'
+    sh 'php --version'
     return true
   } catch(e) {
     return false
