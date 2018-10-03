@@ -1,7 +1,7 @@
 def call() {
   def causes = currentBuild.rawBuild.getCauses()
   
-  println causes
+  echo causes
   
   try {
     sh 'php --version'
