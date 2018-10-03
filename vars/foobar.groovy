@@ -7,6 +7,7 @@ def call() {
     }
   }
 
+  sh 'php --version'
   try {
     sh 'php --version'
     return true
