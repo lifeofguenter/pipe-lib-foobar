@@ -3,7 +3,7 @@ def call() {
 
   for (cause in causes) {
     if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
-      echo 'time triggered'
+      //return true
     }
   }
 
