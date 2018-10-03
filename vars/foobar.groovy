@@ -1,12 +1,17 @@
 def call() {
   def causes = currentBuild.rawBuild.getCauses()
-  
-  println causes
-  
-  try {
-    sh 'php --version'
-    return true
-  } catch(e) {
-    return false
+
+  for (cause in causes) {
+    if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
+      //return true
+    }
   }
+
+  sh 'php --version'
+  //try {
+  //  sh 'php --version'
+  //  return true
+  //} catch(e) {
+  //  return false
+  //}
 }
