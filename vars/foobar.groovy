@@ -2,7 +2,7 @@ def call() {
   def causes = currentBuild.rawBuild.getCauses()
 
   for (cause in causes) {
-    echo cause.toString()
+    echo cause.getClass()
   }
   
   try {
