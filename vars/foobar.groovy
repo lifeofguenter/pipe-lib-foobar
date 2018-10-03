@@ -1,5 +1,5 @@
 def call() {
-  def causes = currentBuild.rawBuild.getCause()
+  def causes = currentBuild.rawBuild.getCauses()
 
   for (cause in causes) {
     echo cause
