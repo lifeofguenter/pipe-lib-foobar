@@ -1,12 +1,11 @@
 def call() {
-  //def causes = 'foobar' //= currentBuild.rawBuild.getCauses()
-  echo causes.toArray().toString()
+  def causesList = currentBuild.rawBuild.getCauses()
 
-  //for (cause in causes) {
-  //  if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
-  //    //return true
-  //  }
-  //}
+  for (cause in causesList) {
+    if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
+      echo 'time triggered'
+    }
+  }
 
   try {
     sh 'php --version'
