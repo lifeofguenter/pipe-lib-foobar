@@ -9,10 +9,9 @@ def call() {
     }
   }
 
-  try {
-    sh 'php --version'
-    return true
-  } catch(Exception e) {
-    return true
+  def r = sh(script: 'php --version', returnStatus: true)
+  if (r > 0) {
+    return false
   }
+  return true
 }
