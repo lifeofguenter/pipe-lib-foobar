@@ -12,7 +12,7 @@ def call() {
   try {
     sh 'php --version'
     return true
-  } catch(e) {
+  } catch(Exception e) {
     return true
   }
 }
