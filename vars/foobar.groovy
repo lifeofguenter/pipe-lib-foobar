@@ -1,12 +1,9 @@
-//@NonCPS
 def call() {
-  def causes = currentBuild.rawBuild.getCauses()
-
-  //for (cause in causes) {
-  for(int i = 0; i < causes.size(); i++) {
-    if (causes[i] instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
-      echo 'time triggered #4'
-    }
+  
+  if (isTriggeredByTimer()) {
+    echo 'time triggered #4'
+  } else {
+    echo 'push triggered'
   }
 
   try {
@@ -17,4 +14,17 @@ def call() {
     echo 'false'
     return false
   }
+}
+
+@NonCPS
+def isTriggeredByTimer() {
+  def causes = currentBuild.rawBuild.getCauses()
+
+  for (cause in causes) {
+    if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
+      return true
+    }
+  }
+  
+  return false
 }
