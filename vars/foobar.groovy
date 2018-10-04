@@ -1,7 +1,7 @@
 def call() {
-  
+
   if (isTriggeredByTimer()) {
-    echo 'time triggered #4'
+    echo 'time triggered #5'
   } else {
     echo 'push triggered'
   }
@@ -25,6 +25,6 @@ def isTriggeredByTimer() {
       return true
     }
   }
-  
+
   return false
 }
