@@ -9,7 +9,7 @@ def call() {
     }
   }
 
-  //def r = sh(script: 'php --version', returnStatus: true)
+  def r = sh([script: 'php --version', returnStatus: true])
   def r = 1
   if (r > 0) {
     echo 'false'
