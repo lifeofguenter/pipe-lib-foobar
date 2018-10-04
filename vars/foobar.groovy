@@ -1,12 +1,13 @@
 //@NonCPS
 def call() {
-  //def causes = currentBuild.rawBuild.getCauses()
-  //
+  def causes = currentBuild.rawBuild.getCauses()
+
   //for (cause in causes) {
-  //  if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
-  //    echo 'time triggered #3'
-  //  }
-  //}
+  for(int i = 0; i < causes.size(); i++) {
+    if (causes[i] instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
+      echo 'time triggered #3'
+    }
+  }
 
   try {
     sh 'php --version'
