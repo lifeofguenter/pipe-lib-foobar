@@ -13,6 +13,6 @@ def call() {
     sh 'php --version'
     return true
   } catch(e) {
-    return false
+    return true
   }
 }
