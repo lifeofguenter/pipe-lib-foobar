@@ -1,5 +1,6 @@
 def call() {
-  def causes = currentBuild.rawBuild.getCauses()
+  def causes = 'foobar' //= currentBuild.rawBuild.getCauses()
+  echo causes
 
   //for (cause in causes) {
   //  if (cause instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
