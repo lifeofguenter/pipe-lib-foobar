@@ -1,5 +1,4 @@
 @NonCPS
-
 def call() {
   def causes = currentBuild.rawBuild.getCauses()
 
@@ -14,7 +13,6 @@ def call() {
     echo 'true'
     return true
   } catch(Exception e) {
-    currentBuild.result = 'SUCCESS'
     echo 'false'
     return false
   }
