@@ -9,12 +9,13 @@ def call() {
     }
   }
 
-  def r = sh(returnStatus: true, script: 'php --version')
-  if (r > 0) {
+  try {
+    sh 'php --version'
+    echo 'true'
+    return true
+  } catch(Exception e) {
+    currentBuild.result = 'SUCCESS'
     echo 'false'
     return false
   }
-
-  echo 'true'
-  return true
 }
