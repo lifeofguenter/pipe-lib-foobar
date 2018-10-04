@@ -5,7 +5,7 @@ def call() {
   //for (cause in causes) {
   for(int i = 0; i < causes.size(); i++) {
     if (causes[i] instanceof hudson.triggers.TimerTrigger.TimerTriggerCause) {
-      echo 'time triggered #3'
+      echo 'time triggered #4'
     }
   }
 
