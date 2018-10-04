@@ -11,7 +11,10 @@ def call() {
 
   def r = sh(script: 'php --version', returnStatus: true)
   if (r > 0) {
+    echo 'false'
     return false
   }
+
+  echo 'true'
   return true
 }
